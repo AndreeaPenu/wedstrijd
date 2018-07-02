@@ -69,6 +69,15 @@
 
                     <div class="form-group row">
                         <div class="col-md-4">
+                            {!! Form::label('role_id', 'Role') !!}
+                        </div>
+                        <div class="col-md-6">
+                            {!! Form::select('role_id', $roles, null, ['class'=>'form-control']) !!}
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-4">
                             {!! Form::label('password', 'Password') !!}
                         </div>
                         <div class="col-md-6">

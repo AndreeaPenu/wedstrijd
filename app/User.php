@@ -14,7 +14,7 @@ class User extends Authenticatable
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'name', 'address', 'number', 'city', 'post_code','email', 'password',
+        'role_id','name', 'address', 'number', 'city', 'post_code','email', 'password',
     ];
 
     /**
@@ -25,4 +25,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function role(){
+        return $this->belongsTo('App\Role');
+    }
+
+    public function isAdmin(){
+        if($this->role->name == "administrator"){
+            return true;
+        }
+        return false;
+    }
 }
