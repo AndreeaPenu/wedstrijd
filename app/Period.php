@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Period extends Model
 {
     protected $fillable = [
-        'begin','end'
+        'begin', 'end'
     ];
 
     public function participations(){
