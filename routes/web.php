@@ -18,3 +18,5 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('competition/participate', 'ParticipationController@participate');
 
 Route::post('competition/upload', 'ParticipationController@upload');
+
+Route::post('competition/like', 'ParticipationController@like');

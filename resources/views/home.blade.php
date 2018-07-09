@@ -16,7 +16,12 @@
                         @foreach($participations as $participation)
                             <li>  
                                 <img class="part-pic" src="uploads/{{$participation->file}}" alt="image" width="50" height="50">
-                                <p>has 0 likes <a href="#">like</a></p>
+                                <p>has 0 likes</p>
+
+                                 {!! Form::open(array('method'=>'post','action'=>'ParticipationController@like')) !!}
+                                    {!! Form::hidden('id', $participation->id, array('id' => $participation->id)) !!}
+                                    {!! Form::submit('Vote',array('class'=>'btn btn-primary like')) !!}
+                                 {!! Form::close() !!}
                             </li>
                         @endforeach
                     </ul>

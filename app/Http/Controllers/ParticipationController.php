@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use App\Participation;
+use App\Like;
+use App\User;
 use Auth;
 
 class ParticipationController extends Controller
@@ -49,7 +51,8 @@ class ParticipationController extends Controller
         return view('competition/participate');
     }
 
-    public function upload(){      
+    public function upload() 
+    {      
         if(Input::hasFile('file')){
             $participation = new Participation;
             echo 'Uploaded';
@@ -63,5 +66,21 @@ class ParticipationController extends Controller
             $participation->save();
             return redirect('/home');
         }
+    }
+
+    public function like(Request $request)
+    {
+        $part = $request->input('id');
+        $int = (int)$part;
+        $data = [
+            'user_id' => Auth::id(),
+            'participation_id' => $int
+        ];
+        Like::create($data);
+        $user = User::findOrFail(Auth::id());
+        $user->has_voted = 1;
+        $user->save();
+
+        return back();
     }
 }
