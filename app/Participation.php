@@ -17,4 +17,8 @@ class Participation extends Model
     public function period(){
         return $this->belongsTo('App\Period');
     }
+
+    public function likes(){
+        return $this->belongsToMany('App\User','likes');
+    }
 }

@@ -36,4 +36,12 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function likes(){
+        return $this->belongsToMany('App\Participation', 'likes', 'user_id','participation_id');
+    }
+
+    public function participation(){
+        return $this->hasOne('App\Participation');
+    }
 }
