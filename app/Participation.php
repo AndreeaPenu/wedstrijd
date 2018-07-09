@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Participation extends Model
 {   
     protected $fillable = [
-        'photo', 'period_id', 'user_id'
+        'file', 'period_id', 'user_id'
     ];
 
     public function user(){
