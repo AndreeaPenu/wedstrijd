@@ -16,7 +16,7 @@
                         @foreach($participations as $participation)
                             <li>  
                                 <img class="part-pic" src="uploads/{{$participation->file}}" alt="image" width="50" height="50">
-                                <p>has 0 likes</p>
+                                <p>{{$participation->user->name}} |  Votes: {{$participation->likes->count()}}</p>
 
                                  {!! Form::open(array('method'=>'post','action'=>'ParticipationController@like')) !!}
                                     {!! Form::hidden('id', $participation->id, array('id' => $participation->id)) !!}
