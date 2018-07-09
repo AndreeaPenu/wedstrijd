@@ -14,7 +14,7 @@
                     @endif
 
                     <h1>Winners</h1>
-                    <h6>Winner period 1: </h6>
+                    <h6>Winner period 1: {{$winner_name}}</h6>
                     <h6>Winner period 2: </h6>
                     <h6>Winner period 3: </h6>
                     <h6>Winner period 4: </h6>
