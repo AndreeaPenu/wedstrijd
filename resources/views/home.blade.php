@@ -12,6 +12,14 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
+                    <h1>Winners</h1>
+                    <h6>Winner period 1: </h6>
+                    <h6>Winner period 2: </h6>
+                    <h6>Winner period 3: </h6>
+                    <h6>Winner period 4: </h6>
+
+                    <h1>All participations</h1>
                     <ul>
                         @foreach($participations as $participation)
                             <li>  
