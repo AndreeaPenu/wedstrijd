@@ -29,7 +29,9 @@
 
                                  {!! Form::open(array('method'=>'post','action'=>'ParticipationController@like')) !!}
                                     {!! Form::hidden('id', $participation->id, array('id' => $participation->id)) !!}
-                                    {!! Form::submit('Vote',array('class'=>'btn btn-primary like')) !!}
+                                    @if($participation->user_id != Auth::user()->id && !Auth::user()->has_voted)
+                                        {!! Form::submit('Vote',array('class'=>'btn btn-primary like')) !!}
+                                    @endif
                                  {!! Form::close() !!}
                             </li>
                         @endforeach
