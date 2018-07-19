@@ -51,15 +51,21 @@ class HomeController extends Controller
         //choose winner of current period
         $period_end = $period->end;
         if ($period_end == $today->toDateString()){
-            $winner = new Winner;
-            $winner->user_id = $winner_id;
-            $winner->save();
+            $winner_period = Winner::findOrFail($period_id);
+            if(!$winner_period){
+                $winner = new Winner;
+                $winner->user_id = $winner_id;
+                $winner->save();
+            }
         }
     
         //get the name of the winner
         $the_winner = User::findOrFail($winner_id);
         $winner_name = $the_winner->name;
 
-        return view('home',compact('participations','partLikeCount','winner_name'));
+        $winners = Winner::all();
+        $users = User::all();
+
+        return view('home',compact('participations','partLikeCount','winners','users'));
     }  
 }

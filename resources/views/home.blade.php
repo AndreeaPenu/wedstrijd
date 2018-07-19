@@ -14,11 +14,11 @@
                     @endif
 
                     <h1>Winners</h1>
-                    <h6>Winner period 1: {{$winner_name}}</h6>
-                    <h6>Winner period 2: </h6>
-                    <h6>Winner period 3: </h6>
-                    <h6>Winner period 4: </h6>
 
+                    @foreach($winners as $key => $winner)
+                        <h6>Winner period {{$key+1}}: {{$users[$winners[$key]->id]->name}}</h6>
+                    @endforeach
+                       
                     <h1>All participations</h1>
                     <ul>
                     @if($participations)
