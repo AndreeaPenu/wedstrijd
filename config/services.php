@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain' => 'mg.wedstrijd.com',
+        'secret' => 'bb3c338f7a038f309ffbbd235caa238c-8889127d-d29000ba',
     ],
 
     'ses' => [
