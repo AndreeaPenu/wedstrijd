@@ -21,6 +21,7 @@
 
                     <h1>All participations</h1>
                     <ul>
+                    @if($participations)
                         @foreach($participations as $participation)
                             <li>  
                                 <img class="part-pic" src="uploads/{{$participation->file}}" alt="image" width="50" height="50">
@@ -32,6 +33,7 @@
                                  {!! Form::close() !!}
                             </li>
                         @endforeach
+                    @endif
                     </ul>
                 </div>
             </div>
