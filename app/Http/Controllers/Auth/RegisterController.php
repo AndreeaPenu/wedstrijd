@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Laravel\Socialite\Facades\Socialite;
 
 class RegisterController extends Controller
 {
@@ -77,5 +78,40 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function redirectToProvider()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    public function handleProviderCallback(Request $request)
+    {
+
+        try{
+            $socialUser = Socialite::driver('facebook')->user();
+
+        }
+        catch(\Exeption $e){
+            return redirect('/');
+        }
+
+        $user = User::where('facebook_id',$socialUser->getId())->first();
+        if(!$user)
+            User::create([
+
+                'facebook_id' => $socialUser->getId(),
+                'name' => $socialUser->getName(),
+                'email' => $socialUser->getEmail(),
+                'ip_address' => $request->ip(),
+                'has_voted' => false,
+            ]);
+        auth()->login($user);
+
+        $id = Auth::user()->getId();
+
+        return redirect()->to('/users/'.$id.'/edit');
+
+        // $user->token;
     }
 }

@@ -29,3 +29,6 @@ Route::get('send_email', function(){
 		$message->to('marzone.ap@gmail.com');
 	});
 });
+
+Route::get('auth/facebook', 'Auth\RegisterController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\RegisterController@handleProviderCallback');

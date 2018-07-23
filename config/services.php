@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' => [
+        'client_id' => '669208100090528',
+        'client_secret' => '338ef4948b01116565d5c797ae64aabb',
+        'redirect' => 'http://homestead.test/auth/facebook/callback',
+    ],
+
 ];

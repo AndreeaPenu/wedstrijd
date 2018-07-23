@@ -8,13 +8,13 @@
 
             <div class="card mb-4">
                 <div class="card-body">
-                    <p>You can create an account by using one of these external accounts.</p>
+                    <p class="text-center">You can create an account by using one of these external accounts.</p>
                 </div>
             </div>
             <div class="card">
 
                 <div class="card-body">
-                    <p>If you do not have any of the accounts listed above, please enter your information below.</p>
+                    <p class="text-center">If you do not have any of the accounts listed above, please enter your information below.</p>
                     <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                         @csrf
 
