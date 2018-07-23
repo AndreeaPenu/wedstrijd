@@ -1,0 +1,78 @@
+body {
+    font-family: 'Lato';
+}
+
+.home {
+    height: 100%;
+    background-color: #333;
+    background: url(../images/mariobros2.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.content h1, .content .h1-p, .content p {
+    color: #ffffff;
+}
+
+.h1-p {
+    font-size: 24px!important;
+    font-weight: 400;
+}
+
+.logo {
+    width: 120px;
+    height: 50px;
+}
+
+.navbar-laravel {
+    background-color: #F71215!important;
+}
+
+.navbar {
+    padding: 0rem 1rem!important;
+}
+
+.navbar-brand {
+    padding-top: 0!important;
+}
+
+.nav-link {
+    color: #ffffff!important;
+}
+
+.btn-primary {
+    background-color: #F71215!important;
+    border-color: #F71215!important;
+    font-weight: bold;
+    border-radius: 2px!important;
+
+    -webkit-transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -ms-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+.btn-lg {
+    padding: 10px 20px!important;
+}
+
+.mt-15p {
+    margin-top: 15%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.part {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.part-pic {
+    height: 200px;
+    width: 150px;
+}

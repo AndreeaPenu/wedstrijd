@@ -4,10 +4,17 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <h1 class="text-center">Create Nintendo Account</h1>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <p>You can create an account by using one of these external accounts.</p>
+                </div>
+            </div>
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
+                    <p>If you do not have any of the accounts listed above, please enter your information below.</p>
                     <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                         @csrf
 
