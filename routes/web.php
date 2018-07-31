@@ -33,3 +33,7 @@ Route::get('send_email', function(){
 
 Route::get('auth/facebook', 'Auth\RegisterController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\RegisterController@handleProviderCallback');
+
+Route::get('export', function(){
+	return \Excel::download(new App\Exports\WinnersExport, 'winners.xlsx');
+});

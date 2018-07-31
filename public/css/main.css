@@ -76,3 +76,11 @@ ul {
     height: 200px;
     width: 150px;
 }
+
+.overlay {
+    background: #444;
+    opacity: 0.9;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }

@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Mail\WinnerMail;
 use App\Participation;
 use App\Period;
 use App\Winner;
 use Carbon\Carbon;
 use App\User;
+use Mail;
 use DB;
+
 
 class HomeController extends Controller
 {
@@ -60,12 +62,10 @@ class HomeController extends Controller
                         $winner->user_id = $winner_id;
                         $winner->period_id = $period->id;
                         $winner->save();
-                    }
-                    
-                    
+                        //Mail::to('marzone.ap@gmail.com')->send(new WinnerMail());
+                    }   
             }
       }
-        
         
         $winners = Winner::all();
         $users = User::all();
