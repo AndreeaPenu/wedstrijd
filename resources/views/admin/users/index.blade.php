@@ -1,11 +1,10 @@
-<html>
-<head>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
+<div class="row justify-content-center">
+<div class="col-md-8">
+<h1 class="text-center">Users</h1>
     <div class="card">
-    <div class="card-header">
-        Users
-    </div>
     <div class="card-body">
 <table style="width:100%" class="w3-table w3-striped">
     <tr>
@@ -17,8 +16,6 @@
         <th>Postal code</th>
         <th>Email</th>
         <th>Role</th>
-        <th>Created at</th>
-        <th>Updated at</th>
         <th></th>
     </tr>
     @if($users)
@@ -32,8 +29,6 @@
             <td>{{$user->post_code}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->role->name}}</td>
-            <td>{{$user->created_at}}</td>
-            <td>{{$user->updated_at}}</td>
             <td><a href="{{ url('/') }}/admin/users/{{ $user->id }}/edit" class="btn btn-secondary">Edit</a></td>
         </tr>
         @endforeach
@@ -46,7 +41,7 @@
 </div>
     
 </div>
-
-</body>
-</html>
+</div>
+</div>
+@endsection
 

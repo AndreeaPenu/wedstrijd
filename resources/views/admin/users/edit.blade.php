@@ -1,14 +1,12 @@
-<html>
-<head>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+        <h1 class="text-center">Edit User</h1>
             <div class="card">
-                <div class="card-header">
-                    Edit user
-                </div>
+             
                 <div class="card-body text-center">
                     {!! Form::model($user,['method'=>'PATCH','action'=> ['AdminUsersController@update', $user->id],'files'=>true]) !!}
             
@@ -117,6 +115,4 @@
       
 
 
-</body>
-
-</html>
+@endsection

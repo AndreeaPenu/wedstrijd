@@ -9,6 +9,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'admin'], function(){
+	Route::resource('admin/periods', 'AdminPeriodsController');
     Route::resource('admin/users','AdminUsersController');
    // Route::get('admin/users','AdminUsersController@index');
 });

@@ -63,6 +63,14 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Hello, {{ Auth::user()->name }}</a>
                             </li>
+                            @if(Auth::user()->role_id == 1)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('admin/users') }}">{{ __('Admin Users') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('admin/periods') }}">{{ __('Admin Periods') }}</a>
+                                </li>
+                            @endif
                             <li class="nav-item">
                                 <a class="nav-link" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" href="#"> 
