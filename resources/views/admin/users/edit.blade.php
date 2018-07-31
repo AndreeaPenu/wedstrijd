@@ -9,7 +9,15 @@
              
                 <div class="card-body text-center">
                     {!! Form::model($user,['method'=>'PATCH','action'=> ['AdminUsersController@update', $user->id],'files'=>true]) !!}
-            
+                    @if(count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="form-group row">
                         <div class="col-md-4">
                             {!! Form::label('name', 'Name') !!}
@@ -96,15 +104,6 @@
                
             {!! Form::close() !!}
 
-                    @if(count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                 </div>
                 </div>
             </div>

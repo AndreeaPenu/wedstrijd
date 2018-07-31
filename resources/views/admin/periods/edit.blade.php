@@ -9,13 +9,21 @@
         
                 <div class="card-body text-center">
                     {!! Form::model($period,['method'=>'PATCH','action'=> ['AdminPeriodsController@update', $period->id]]) !!}
-            
+                    @if(count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="form-group row">
                         <div class="col-md-4">
                             {!! Form::label('begin', 'Begin') !!}
                         </div>
                         <div class="col-md-6">
-                            {!! Form::text('begin', null, ['class'=>'form-control']) !!}
+                            {!! Form::date('begin', null, ['class'=>'form-control']) !!}
                         </div>
                     </div>
 
@@ -24,7 +32,7 @@
                             {!! Form::label('end', 'End') !!}
                         </div>
                         <div class="col-md-6">
-                            {!! Form::text('end', null, ['class'=>'form-control']) !!}
+                            {!! Form::date('end', null, ['class'=>'form-control']) !!}
                         </div>
                     </div>
 
@@ -39,15 +47,6 @@
                
             {!! Form::close() !!}
 
-                    @if(count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                 </div>
                 </div>
             </div>

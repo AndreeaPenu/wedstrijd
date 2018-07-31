@@ -23,6 +23,19 @@ class AdminUsersController extends Controller
 
     public function store(Request $request)
     {
+
+        $this->validate($request,[
+            'name' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'number' => 'required|integer',
+            'city' => 'required|string|max:255',
+            'post_code' => 'required|integer',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        $errors = $validator->errors();
+
         if(trim($request->password) == ''){
             $input = $request->except('password');
         } else {
@@ -50,6 +63,17 @@ class AdminUsersController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'name' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'number' => 'required|integer',
+            'city' => 'required|string|max:255',
+            'post_code' => 'required|integer',
+            'email' => 'required|string|email|max:255',
+        ]);
+
+        $errors = $validator->errors();
+
         $user = User::findOrFail($id);
 
         if(trim($request->password) == ''){

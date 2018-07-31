@@ -75,6 +75,12 @@ class AdminPeriodsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'begin' => 'required|date',
+            'end' => 'required|date',
+        ]);
+
+        $errors = $validator->errors();
         $period = Period::findOrFail($id);
 
    
