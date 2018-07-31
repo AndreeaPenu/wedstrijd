@@ -10,19 +10,18 @@ class PeriodsTableSeeder extends Seeder
         DB::table('periods')->delete();
 
         DB::table('periods')->insert(array(
-
             array(
-                'begin'=>Carbon::yesterday(),
-                'end'=>Carbon::now()->addHour(3)),
+                'begin'=>'2018-07-09',
+                'end'=>'2018-07-15'),
             array(
-                'begin'=>Carbon::now()->addDays(7),
-                'end'=>Carbon::now()->addDays(14)),
+                'begin'=>'2018-07-16',
+                'end'=>'2018-07-22'),
             array(
-                'begin'=>Carbon::now()->addDays(21),
-                'end'=>Carbon::now()->addDays(28)),
+                'begin'=>'2018-07-23',
+                'end'=>'2018-07-31'),
             array(
-                'begin'=>Carbon::now()->addDays(35),
-                'end'=>Carbon::now()->addDays(42)),
+                'begin'=>'2018-08-01',
+                'end'=>'2018-08-06'),
         ));
     }
 }

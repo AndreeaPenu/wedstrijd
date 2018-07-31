@@ -14,8 +14,8 @@
         <h1 class="text-center">Winners</h1>
         <div class="card mb-4">
             <div class="card-body">
-                    @foreach($winners as $key => $winner)
-                        <h6>Winner period {{$key+1}}: {{$users[$winners[$key]->id]->name}}</h6>
+                    @foreach($winners as $winner)
+                        <h6>Winner period {{$winner->period_id}}: {{$winner->user->name}}</h6>
                     @endforeach
             </div>
         </div>

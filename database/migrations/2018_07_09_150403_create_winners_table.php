@@ -16,6 +16,7 @@ class CreateWinnersTable extends Migration
         Schema::create('winners', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->integer('period_id');
             $table->timestamps();
         });
     }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use App\Participation;
+use Carbon\Carbon;
+use App\Period;
 use App\Like;
 use App\User;
 use Auth;
@@ -61,7 +63,19 @@ class ParticipationController extends Controller
            // echo '<img src="uploads/'.$file->getClientOriginalName().'/>"';
 
             $participation->file = $file->getClientOriginalName();
-            $participation->period_id = 1;
+            
+
+            $today = Carbon::now();
+            $periods = Period::all();
+
+            // get right period
+            foreach($periods as $period){
+                if($period->begin <= $today->toDateString() && $period->end >= $today->toDateString()){
+                    $current_period = $period->id;
+                }
+            }
+
+            $participation->period_id = $current_period;
             $participation->user_id = Auth::user()->id;
             $participation->save();
             return redirect('/home');

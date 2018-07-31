@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function participation(){
         return $this->hasOne('App\Participation');
     }
+
+    public function winner(){
+        return $this->hasMany('App\Winner');
+    }
 }
