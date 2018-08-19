@@ -14,6 +14,10 @@ Route::group(['middleware' => 'admin'], function(){
    // Route::get('admin/users','AdminUsersController@index');
 });
 
+Route::get('signup', function(){
+	return view('signup');
+});
+
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('competition/participate', 'ParticipationController@participate');

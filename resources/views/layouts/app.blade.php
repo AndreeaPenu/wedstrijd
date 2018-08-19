@@ -50,15 +50,15 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ url('signup') }}">{{ __('Log in / Sign up') }}</a>
                             </li>
-                            <li class="nav-item">
+<!--                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/auth/facebook' )}}">Login with Facebook</a>
-                            </li>
+                            </li> -->
                         @else
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Hello, {{ Auth::user()->name }}</a>

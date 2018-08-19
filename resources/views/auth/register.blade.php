@@ -9,6 +9,16 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <p class="text-center">You can create an account by using one of these external accounts.</p>
+
+                                                                <div class="form-group row mb-0">
+                            <div class="col-md-12">
+                                
+                                <div class="social text-center">
+                        
+                                  <a href="{{ url('/auth/facebook' )}}">  <p class="fb">Facebook</p></a>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
             <div class="card">
