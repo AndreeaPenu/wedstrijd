@@ -52,16 +52,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('signup') }}">{{ __('Log in / Sign up') }}</a>
                             </li>
-<!--                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/auth/facebook' )}}">Login with Facebook</a>
-                            </li> -->
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Hello, {{ Auth::user()->name }}</a>
+                                <a class="nav-link" href="{{ url('home') }}">Hello, {{ Auth::user()->name }}</a>
                             </li>
                             @if(Auth::user()->role_id == 1)
                                 <li class="nav-item">

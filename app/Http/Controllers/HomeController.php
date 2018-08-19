@@ -43,27 +43,32 @@ class HomeController extends Controller
 
         //get winner
         $winner = DB::table('likes')->select(DB::raw('count(participation_id) as occurrences, participation_id'))->groupBy('participation_id')->orderBy('occurrences','desc')->limit(1)->get();
-      if ($winner->isEmpty()){
-
+    
+        if ($winner->isEmpty()){
+  var_dump($winner);
       } else {
         $winner_id = $winner[0]->participation_id;
-        
+        var_dump($winner[0]->participation_id);
             $winner_participation = Participation::findOrFail($winner_id);
+           
             $period_id = $winner_participation->period_id;
             
             $period = Period::findOrFail($period_id);
-        
+         
             //choose winner of current period
             $period_end = $period->end;
+           
             if ($period_end == $today->toDateString()){
                     $winner_period = Winner::all()->where('period_id',$period_id);
-                    if(!$winner_period){
+                    if($winner_period->isEmpty()){
                         $winner = new Winner;
                         $winner->user_id = $winner_id;
                         $winner->period_id = $period->id;
                         $winner->save();
-                        //Mail::to('marzone.ap@gmail.com')->send(new WinnerMail());
-                    }   
+                        Mail::to('marzone.ap@gmail.com')->send(new WinnerMail());
+                    }else {
+                        Mail::to('marzone.ap@gmail.com')->send(new WinnerMail());
+                    }
             }
       }
         

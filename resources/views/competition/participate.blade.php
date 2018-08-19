@@ -1,14 +1,13 @@
-<html>
-<head>
-</head>
-<body>
-<div class="container">
+@extends('layouts.app')
+
+@section('content')
+
+    <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <h1 class="text-center">Participate now!</h1>
             <div class="card">
-                <div class="card-header">
-                    Participate now!
-                </div>
+                
                 <div class="card-body">
                     <h1>File upload</h1>
 
@@ -20,7 +19,7 @@
 
                             <div class="col-md-6">
                                 <input id="file" type="file" class="form-control" name="file">
-                                <input type="submit" value="Upload" name="submit">
+                                <input type="submit" class="btn btn-primary btn-lg mt-4" value="Upload" name="submit">
                             </div>
                         </div>
                     </form>
@@ -30,5 +29,6 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+@endsection
+
+

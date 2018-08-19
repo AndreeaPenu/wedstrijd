@@ -11,17 +11,17 @@ class PeriodsTableSeeder extends Seeder
 
         DB::table('periods')->insert(array(
             array(
-                'begin'=>'2018-07-09',
-                'end'=>'2018-07-15'),
+                'begin'=>'2018-08-10',
+                'end'=>'2018-08-12'),
             array(
-                'begin'=>'2018-07-16',
-                'end'=>'2018-07-22'),
+                'begin'=>'2018-08-13',
+                'end'=>'2018-08-16'),
             array(
-                'begin'=>'2018-07-23',
-                'end'=>'2018-07-31'),
+                'begin'=>'2018-08-17',
+                'end'=>'2018-08-19'),
             array(
-                'begin'=>'2018-08-01',
-                'end'=>'2018-08-06'),
+                'begin'=>'2018-08-20',
+                'end'=>'2018-08-25'),
         ));
     }
 }

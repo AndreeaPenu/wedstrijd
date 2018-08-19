@@ -9,16 +9,17 @@
                 {{ session('status') }}
             </div>
         @endif
-        <div class="card">
+        <div class="card intro">
             <div class="card-body text-center">
                 <h1 class="text-center">Here is your chance to win the new Mario Bros game!</h1>
+                <p>Draw your favourite Mario character and participate on this page. </br>
+            The player with the most votes wins!</p>
                 <a class="btn btn-lg btn-primary mb-4" href="/competition/participate">Participate</a>
             </div>
         </div>
        
 
-
-        <h1 class="text-center">Winners</h1>
+        <h1 class="text-center mt-4">Winners</h1>
         <p class="lead text-center">These are the winners of previous contests</p>
         <div class="card mb-4">
             <div class="card-body">
@@ -36,7 +37,7 @@
                 
                     @if($participations)
                         @foreach($participations as $participation)
-                            <div class="part">
+                            <div class="part col-sm-4">
                             <div class="card">
                             <div class="card-body">
                              <img class="part-pic" src="uploads/{{$participation->file}}" alt="image">

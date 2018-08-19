@@ -52,11 +52,12 @@ h1 {
     padding-top: 0!important;
 }
 
-.nav-link {
+
+/* .nav-link {
     color: #ffffff!important;
     background: #F71215;
     border-radius: 3px;
-}
+} */
 
 .btn-primary {
     background-color: #F71215!important;
@@ -156,4 +157,28 @@ ul {
     text-decoration: none;
     background: lightgray;
     color: black;
+}
+
+.intro {
+    background: lightblue;
+}
+
+.intro h1,
+.intro p {
+    color: white;
+}
+
+.part .card-body {
+    padding: 1.25rem;
+}
+
+.part .card-body img {
+    height: auto;
+    width: 100%;
+}
+
+.part .card-footer {
+    background: white;
+    text-align: center;
+    border: 0;
 }
