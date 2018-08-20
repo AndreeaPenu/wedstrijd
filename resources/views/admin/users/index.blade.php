@@ -6,6 +6,7 @@
 <h1 class="text-center">Users</h1>
     <div class="card">
     <div class="card-body">
+    <a href="{{ url('/') }}/export" class="btn btn-primary">Export</a>
 <table style="width:100%" class="w3-table w3-striped">
     <tr>
         <th>ID</th>

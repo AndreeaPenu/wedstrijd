@@ -9,8 +9,7 @@ class WinnersExport implements FromCollection
 {
     public function collection()
     {
-        $users = "all users";
-        return $users;
+        return User::all();
     }
 }
 

@@ -27,7 +27,7 @@ Route::post('competition/upload', 'ParticipationController@upload');
 Route::post('competition/like', 'ParticipationController@like');
 
 Route::get('send_email', function(){
-	Mail::raw('We have chosen an new winner!', function($message)
+	Mail::raw('We have chosen a new winner!', function($message)
 	{
 		$message->subject('The winner of this periods competition is...');
 		$message->from('no-reply@nintendo.com', 'Nintendo');

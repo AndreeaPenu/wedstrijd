@@ -34,7 +34,7 @@ class AdminUsersController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
 
-        $errors = $validator->errors();
+     
 
         if(trim($request->password) == ''){
             $input = $request->except('password');
@@ -72,7 +72,7 @@ class AdminUsersController extends Controller
             'email' => 'required|string|email|max:255',
         ]);
 
-        $errors = $validator->errors();
+ 
 
         $user = User::findOrFail($id);
 

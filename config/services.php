@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => 'mg.wedstrijd.com',
-        'secret' => 'bb3c338f7a038f309ffbbd235caa238c-8889127d-d29000ba',
+        'domain' => 'mg.nintendowedstrijd.com',
+        'secret' => 'key-0fe2d4690c723e90f43c23f836c65c3b',
     ],
 
     'ses' => [
